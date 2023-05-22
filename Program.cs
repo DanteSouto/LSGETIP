@@ -85,8 +85,33 @@ namespace LSGETIP
 
             notifyIcon.ContextMenu = contextMenu;
 
+            //checker.Enabled = true;
+            //checker.StartChecking();
+
             Application.Run();
 
+            //ShowStatistics(NetworkInterfaceComponent.IPv4);
+            //ShowStatistics(NetworkInterfaceComponent.IPv6);
+
+            //TestInternetConnection("www.lopessouto.com.br");
+            //if (IsConnectionAvailable("https://www.lopessouto.com.br"))
+            //{
+            //    Console.WriteLine("Internet is on");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Internet is off");
+            //}
+
+            //NetworkChange.NetworkAvailabilityChanged += OnNetworkAvailabilityChanged;
+            //NetworkChange.NetworkAddressChanged += OnNetworkAddressChanged;
+
+            //Console.WriteLine(
+            //    "Listening changes in network availability. Press any key to continue.");
+            //Console.ReadLine();
+
+            //NetworkChange.NetworkAvailabilityChanged -= OnNetworkAvailabilityChanged;
+            //NetworkChange.NetworkAddressChanged -= OnNetworkAddressChanged;
         }
 
         private static void MenuItemIsConectado_Click(object sender, EventArgs e)
@@ -153,6 +178,109 @@ namespace LSGETIP
         {
             Application.Exit();
         }
+
+        //static void OnNetworkAvailabilityChanged(object sender, NetworkAvailabilityEventArgs networkAvailability)
+        //{
+        //    Console.WriteLine($"Network is available: {networkAvailability.IsAvailable}");
+        //    if (IsConnectionAvailable("https://www.lopessouto.com.br"))
+        //    {
+        //        Console.WriteLine("Internet is on");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Internet is off");
+        //    }
+        //}
+
+        //static void OnNetworkAddressChanged(object sender, EventArgs args)
+        //{
+        //    NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
+        //    foreach (NetworkInterface n in adapters)
+        //    {
+        //        Console.WriteLine("NetworkMonitor {0}", String.Format("{0} is {1}", n.Name, n.OperationalStatus));
+        //    }
+        //    if (IsConnectionAvailable("https://www.lopessouto.com.br"))
+        //    {
+        //        Console.WriteLine("Internet is on");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Internet is off");
+        //    }
+        //}
+
+        //static void ShowStatistics(NetworkInterfaceComponent version)
+        //{
+
+        //    IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+
+        //    TcpStatistics stats;
+
+        //    if(version == NetworkInterfaceComponent.IPv4)
+        //    {
+        //        stats = properties.GetTcpIPv4Statistics();
+        //    }
+        //    else
+        //    {
+        //        stats = properties.GetTcpIPv6Statistics();
+        //    }
+
+        //    Console.WriteLine($"TCP/{version} Statistics");
+        //    Console.WriteLine($"  Minimum Transmission Timeout : {stats.MinimumTransmissionTimeout:#,#}");
+        //    Console.WriteLine($"  Maximum Transmission Timeout : {stats.MaximumTransmissionTimeout:#,#}");
+        //    Console.WriteLine("  Connection Data");
+        //    Console.WriteLine($"      Current :                  {stats.CurrentConnections:#,#}");
+        //    Console.WriteLine($"      Cumulative :               {stats.CumulativeConnections:#,#}");
+        //    Console.WriteLine($"      Initiated  :               {stats.ConnectionsInitiated:#,#}");
+        //    Console.WriteLine($"      Accepted :                 {stats.ConnectionsAccepted:#,#}");
+        //    Console.WriteLine($"      Failed Attempts :          {stats.FailedConnectionAttempts:#,#}");
+        //    Console.WriteLine($"      Reset :                    {stats.ResetConnections:#,#}");
+        //    Console.WriteLine("  Segment Data");
+        //    Console.WriteLine($"      Received :                 {stats.SegmentsReceived:#,#}");
+        //    Console.WriteLine($"      Sent :                     {stats.SegmentsSent:#,#}");
+        //    Console.WriteLine($"      Retransmitted :            {stats.SegmentsResent:#,#}");
+        //    Console.WriteLine();
+        //}
+
+        //static void TestInternetConnection(string hostNameOrAddress)
+        //{
+        //    using (Ping pinger = new Ping())
+        //    {
+        //        try
+        //        {
+        //            PingReply reply = pinger.Send(hostNameOrAddress);
+
+        //            if (reply.Status == IPStatus.Success)
+        //            {
+        //                Console.WriteLine($"Ping to {hostNameOrAddress} successful. Response time: {reply.RoundtripTime}ms");
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine($"Ping to {hostNameOrAddress} failed. Status: {reply.Status}");
+        //            }
+        //        }
+        //        catch (PingException ex)
+        //        {
+        //            Console.WriteLine($"An error occurred: {ex.Message}");
+        //        }
+        //    }
+        //}
+
+        //public static bool IsConnectionAvailable(string hostNameOrAddress)
+        //{
+        //    try
+        //    {
+        //        using (var client = new HttpClient())
+        //        {
+        //            var response = client.GetAsync(hostNameOrAddress).Result;
+        //            return response.IsSuccessStatusCode;
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 
 }

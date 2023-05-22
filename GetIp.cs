@@ -70,7 +70,10 @@ namespace LSGETIP
 
         private void SetTimer()
         {
-            
+            // string configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ConfigFile.xml");
+            // ExeConfigurationFileMap configMap = new ExeConfigurationFileMap { ExeConfigFilename = configFilePath };
+            // Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);
+
             int minInterval = AppConfig.GetInt("MinIntervalSeconds", 5);
             int maxInterval = AppConfig.GetInt("MaxIntervalSeconds", 5); ;
             
@@ -141,6 +144,41 @@ namespace LSGETIP
 
             Refresh(url, login, pass, name, port);
 
+            //string configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ConfigFile.xml");
+            //ExeConfigurationFileMap configMap = new ExeConfigurationFileMap { ExeConfigFilename = configFilePath };
+            //Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);
+
+            //var appsList = new List<string>();
+            //var section = config.GetSection("apps");
+            //if (section != null)
+            //{
+            //    List<string> myApps = new List<string>();
+            //    var rawXml = section.SectionInformation.GetRawXml();
+            //    var doc = XDocument.Parse(rawXml);
+            //    foreach (var website in doc.Descendants("app"))
+            //    {
+            //        string url = website.Attribute("url").Value;
+            //        string login = website.Attribute("login").Value;
+            //        string pass = website.Attribute("pass").Value;
+            //        string name = website.Attribute("name") == null ? "" : website.Attribute("name").Value;
+            //        string port = website.Attribute("port") == null ? "" : website.Attribute("port").Value;
+
+            //        if (!Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult) || (uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps))
+            //        {
+            //            Console.WriteLine($"A entrada '{url}' não é uma URL válida. Ignorando...");
+            //            continue;
+            //        }
+
+            //        if (login.Trim() == "" || pass.Trim() == "")
+            //        {
+            //            Console.WriteLine($"A entrada '{url}' não contém dados válidos. Ignorando...");
+            //            continue;
+            //        }
+
+            //        Refresh(url, login, pass, name, port);
+
+            //    }
+            //}
         }
 
         /// <summary>
