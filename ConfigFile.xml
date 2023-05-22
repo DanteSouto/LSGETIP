@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="MinIntervalSeconds" value="60" />
+    <add key="MaxIntervalSeconds" value="600" />
+    <add key="url" value="" />
+    <add key="login" value="" />
+    <add key="pass" value="" />
+    <add key="name" value="" />
+    <add key="port" value="" />
+    <add key="addr" value="" />
+  </appSettings>
+</configuration>
